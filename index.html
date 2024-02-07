@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Thomas Junge</title>
+    <!-- custom CSS -->
+    <link rel="stylesheet" href="./asstes/css/style.css" />
+    <!-- fonts CSS -->
+    <link rel="stylesheet" href="./asstes/fonts/fonts.css" />
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="./asstes/css/bootstrap.min.css" />
+    <!--     font-awesome CSS -->
+    <link rel="stylesheet" href="./asstes/css/all.css" />
+  </head>
+
+  <body>
+    <header id="header-section">
+      <nav id="navbar">
+        <div class="menu-icons" id="menu-icon">
+          <i class="fas fa-bars"></i>
+          <i class="fas fa-times"></i>
+        </div>
+        <a href="#" class="nav-text">Ingenieurbüro Thomas Junge</a>
+        <img src="./asstes/images/logo.jpg" alt="Logo" />
+      </nav>
+
+      <!-- Sidebar -->
+      <div class="sidebar" id="sidebar">
+        <a href="#" class="sidebar-text">Ingenieurbüro Thomas Junge</a>
+      </div>
+    </header>
+
+    <main id="main-section">
+      <div class="overlay">
+        <div class="inner-tex">
+          <h1 class="mb-3">Ingenieurbüro<br />Thomas Junge</h1>
+          <h2>Tragwerksplanung & Bauphysik</h2>
+          <h3>Wir freuen uns über Ihre Anfrage!</h3>
+          <div
+            class="d-flex justify-content-around align-items-center inner-btns mt-5"
+          >
+            <a
+              class="btn btn-light mail-btn"
+              href="mailto:info@ing-junge.de"
+              target="_self"
+              >info@ing-junge.de</a
+            >
+            <a
+              class="btn btn-outline-light tel-btn"
+              href="tel:+49 6126 4773"
+              target="_blank"
+              >+49 6126 4773</a
+            >
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer id="footer-section">
+      <div class="container-fluid">
+        <div class="container">
+          <div class="d-flex justify-content-between align-items-center">
+            <p>
+              Vertreten durch<br />
+              Thomas Junge, Beratender Ingenieur<br />
+              Eingetragen bei der Ingenieurkammer Hessen, KdöR
+            </p>
+
+            <ul>
+              <li><a href="/impressum.html">Impressum</a></li>
+              <li><a href="/datenschutz.html">Datenschutzerklärung</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script
+      src="./asstes/js/bootstrap.bundle.min.js"
+    ></script>
+
+  
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        var navbar = document.getElementById("navbar");
+        var menuIcon = document.getElementById("menu-icon");
+        var sidebar = document.getElementById("sidebar");
+
+
+        menuIcon.addEventListener("click", function () {
+          sidebar.classList.toggle("show");
+          menuIcon.querySelector(".fas.fa-bars").classList.toggle("hide");
+          menuIcon.querySelector(".fas.fa-times").classList.toggle("hide");
+
+          // Toggle background color of the navigation bar
+          navbar.classList.toggle("sidebar-open");
+
+          // Toggle the display property of menu icons based on sidebar visibility
+          if (sidebar.classList.contains("show")) {
+            menuIcon.querySelector(".fas.fa-bars").style.display = "none";
+            menuIcon.querySelector(".fas.fa-times").style.display = "block";
+          } else {
+            menuIcon.querySelector(".fas.fa-bars").style.display = "block";
+            menuIcon.querySelector(".fas.fa-times").style.display = "none";
+          }
+        });
+
+        window.addEventListener("scroll", function () {
+          if (window.scrollY > 0) {
+            navbar.classList.add("scrolled");
+          } else {
+            navbar.classList.remove("scrolled");
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
